@@ -6,7 +6,7 @@ import RecommendedTour from "../components/RecommendedTour";
 const fetchToursPage = async () => {
   const client = getStoryblokApi();
   const response = await client.getStory(`tours`, {
-    version: "draft"
+    version: process.env.NODE_ENV === "development" ? "published" : "draft"
   });
 
   return response.data.story;
@@ -16,7 +16,7 @@ const fetchAllTours = async () => {
   const client = getStoryblokApi();
   const response = await client.getStories({
     content_type: "tour",
-    version: "draft"
+    version: process.env.NODE_ENV === "development" ? "published" : "draft"
   });
 
   return response.data.stories;

@@ -41,7 +41,7 @@ interface MainImage {
 }
 
 function RecommendedTour({ story }: RecommendedTourProps) {
-  console.log("/////////// RecommendedTour props:", story);
+  // console.log("/////////// RecommendedTour props:", story);
   return (
     <div className="max-w-5xl mx-auto bg-white rounded-sm shadow">
       <Image

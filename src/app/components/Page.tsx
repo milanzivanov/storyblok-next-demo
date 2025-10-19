@@ -1,4 +1,4 @@
-import { StoryblokComponent } from "@storyblok/react";
+import { StoryblokComponent, storyblokEditable } from "@storyblok/react";
 
 interface PageParams {
   ref?: string;
@@ -20,7 +20,7 @@ function Page(params: PageParams) {
   // console.log("Page component params:", params.blok.blocks);
 
   return (
-    <main>
+    <main {...storyblokEditable(params.blok)} className="w-full">
       {params.blok.blocks.map((block) => (
         <StoryblokComponent blok={block} key={block._uid} />
       ))}
