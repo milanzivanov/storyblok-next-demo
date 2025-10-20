@@ -34,6 +34,7 @@ async function ToursPage() {
       <StoryblokStory story={story} />
       <div className="grid md:grid-cols-2 gap-8 container mx-auto px-4 w-full py-16">
         {tours.map((tour) => (
+          // ???? NEEDS IMPROVMENTS
           <RecommendedTour story={tour as any} key={tour.content._uid} />
         ))}
       </div>

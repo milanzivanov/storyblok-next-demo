@@ -46,9 +46,9 @@ function RecommendedTour({ story }: RecommendedTourProps) {
     <div className="max-w-5xl mx-auto bg-white rounded-sm shadow">
       <Image
         className="aspect-video object-cover w-full"
-        src={`${story.content.main_image.filename}/m/736x414/filters:quality(70)`}
-        width={736}
-        height={414}
+        src={`${story.content.main_image.filename}/m/992x657/filters:quality(70)`}
+        width={992}
+        height={657}
         alt={story.content.main_image.alt || "Tour Image"}
         loading={"lazy"}
       />
