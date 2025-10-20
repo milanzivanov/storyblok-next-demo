@@ -4,7 +4,7 @@ interface GridParams {
   ref?: string;
   blok: {
     _uid: string;
-    items: Array<GridParamsItems>; // Replace 'object' with a more specific type if known
+    items: Array<GridParamsItems>;
     headline: string;
     component: string;
     _editable: string;

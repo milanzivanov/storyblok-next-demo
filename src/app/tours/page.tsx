@@ -30,15 +30,20 @@ async function ToursPage() {
   // console.log("////////// Story page story:", story);
 
   return (
-    <div>
+    <>
       <StoryblokStory story={story} />
-      <div className="grid md:grid-cols-2 gap-8 container mx-auto px-4 w-full py-16">
+      <div>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mt-16">
+          Recommended Tours
+        </h2>
+      <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto px-4 w-full py-16">
         {tours.map((tour) => (
           // ???? NEEDS IMPROVMENTS
           <RecommendedTour story={tour as any} key={tour.content._uid} />
         ))}
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 export default ToursPage;
