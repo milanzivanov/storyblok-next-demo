@@ -42,21 +42,28 @@ interface MainImage {
 
 function RecommendedTour({ story }: RecommendedTourProps) {
   // console.log("/////////// RecommendedTour props:", story);
-
-
-  const imageSrc = story.content.main_image.filename
-  ? `${story.content.main_image.filename}/m/992x657/filters:quality(70)`
-  : "/Welcome-Milan-Portfolio.webp";
-
+  
   return (
     <div className="max-w-5xl mx-auto bg-white rounded-sm shadow">
-      <Image
+      {/* <Image
         className="aspect-video object-cover w-full"
-        src={imageSrc}
+        src={`${story.content.main_image.filename}/m/992x657/filters:quality(70)`}
         width={992}
         height={657}
         alt={story.content.main_image.alt || "Tour Image"}
         loading={"lazy"}
+      /> */}
+
+      <Image
+        className="aspect-video object-cover w-full"
+        src={story.content.main_image.filename.replace(
+          '/f/',
+          '/f/m/992x657/filters:quality(70)/'
+        )}
+        width={992}
+        height={657}
+        alt={story.content.main_image.alt || "Tour Image"}
+        loading="lazy"
       />
       <div className="p-8">
         <div className="flex gap-4 justify-between text-lg font-bold">
