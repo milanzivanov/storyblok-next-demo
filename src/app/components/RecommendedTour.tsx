@@ -58,13 +58,15 @@ function RecommendedTour({ story }: RecommendedTourProps) {
         className="aspect-video object-cover w-full"
         src={story.content.main_image.filename.replace(
           '/f/',
-          '/f/m/992x657/filters:quality(70)/'
+          '/f/m/992x657/'
         )}
         width={992}
         height={657}
         alt={story.content.main_image.alt || "Tour Image"}
         loading="lazy"
+        quality={70}
       />
+      
       <div className="p-8">
         <div className="flex gap-4 justify-between text-lg font-bold">
           <h3>{story.content.name}</h3>
