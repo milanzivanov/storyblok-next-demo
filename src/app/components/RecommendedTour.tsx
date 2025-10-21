@@ -56,10 +56,7 @@ function RecommendedTour({ story }: RecommendedTourProps) {
 
       <Image
         className="aspect-video object-cover w-full"
-        src={story.content.main_image.filename.replace(
-          '/f/',
-          '/f/m/992x657/'
-        )}
+        src={story.content.main_image.filename}
         width={992}
         height={657}
         alt={story.content.main_image.alt || "Tour Image"}
