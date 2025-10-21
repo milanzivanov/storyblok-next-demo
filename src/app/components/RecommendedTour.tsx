@@ -36,17 +36,23 @@ interface MainImage {
   filename: string;
   copyright: string;
   fieldtype: string;
-  meta_data: object; // Replace with a more specific type if you know the structure
+  meta_data: object;
   is_external_url: boolean;
 }
 
 function RecommendedTour({ story }: RecommendedTourProps) {
   // console.log("/////////// RecommendedTour props:", story);
+
+
+  const imageSrc = story.content.main_image.filename
+  ? `${story.content.main_image.filename}/m/992x657/filters:quality(70)`
+  : "/Welcome-Milan-Portfolio.webp";
+
   return (
     <div className="max-w-5xl mx-auto bg-white rounded-sm shadow">
       <Image
         className="aspect-video object-cover w-full"
-        src={`${story.content.main_image.filename}/m/992x657/filters:quality(70)`}
+        src={imageSrc}
         width={992}
         height={657}
         alt={story.content.main_image.alt || "Tour Image"}
