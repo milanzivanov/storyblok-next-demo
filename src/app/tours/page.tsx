@@ -26,6 +26,9 @@ async function ToursPage() {
   const story = await fetchToursPage();
   const tours = await fetchAllTours();
 
+
+// console.log("////////// Tours page headline:", headline);
+
   // console.log("////////// Tours page tours:", tours);
   // console.log("////////// Story page story:", story);
 
