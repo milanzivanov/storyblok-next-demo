@@ -54,6 +54,7 @@ function RecommendedTour({ story }: RecommendedTourProps) {
         loading={"lazy"}
       /> */}
 
+      {/* without filters */}
       <Image
         className="aspect-video object-cover w-full"
         src={story.content.main_image.filename}
