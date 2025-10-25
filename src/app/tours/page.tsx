@@ -1,7 +1,11 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+// /* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { getStoryblokApi } from "@/lib/storyblok";
 import { StoryblokStory } from "@storyblok/react/rsc";
-import RecommendedTour from "../components/RecommendedTour";
+import RecommendedTour, { StoryTest } from "../components/RecommendedTour";
+
+
+
 
 const fetchToursPage = async () => {
   const client = getStoryblokApi();
@@ -19,15 +23,13 @@ const fetchAllTours = async () => {
     version: process.env.NODE_ENV === "development" ? "published" : "draft"
   });
 
-  return response.data.stories;
+  // inspect
+  return response.data.stories.map(p => p as unknown as StoryTest) ;
 };
 
 async function ToursPage() {
   const story = await fetchToursPage();
   const tours = await fetchAllTours();
-
-
-// console.log("////////// Tours page headline:", headline);
 
   // console.log("////////// Tours page tours:", tours);
   // console.log("////////// Story page story:", story);
@@ -42,8 +44,8 @@ async function ToursPage() {
       <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto px-4 w-full py-16">
         {tours.map((tour) => (
           // ???? NEEDS IMPROVMENTS
-          <RecommendedTour story={tour as any} key={tour.content._uid} />
-        ))}
+          <RecommendedTour story={tour} key={tour.content._uid} />
+        ))}               
       </div>
       </div>
     </>

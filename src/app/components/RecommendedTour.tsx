@@ -2,28 +2,32 @@ import { StoryblokRichTextNode } from "@storyblok/react";
 import Image from "next/image";
 import Link from "next/link";
 
-export interface RecommendedTourProps {
-  story: {
-    full_slug: string;
 
+export interface StoryTest {
+  
+  full_slug: string;
+
+  name: string;
+  created_at: string;
+  published_at: string | null;
+  updated_at?: string | undefined;
+  id: number;
+  uuid: string;
+
+  content: {
+    _uid: string;
     name: string;
-    created_at: string;
-    published_at: string | null;
-    updated_at?: string | undefined;
-    id: number;
-    uuid: string;
-
-    content: {
-      _uid: string;
-      name: string;
-      price: string;
-      location: string;
-      body: StoryblokRichTextNode<string>;
-      component: string;
-      main_image: MainImage;
-      _editable: string;
-    };
+    price: string;
+    location: string;
+    body: StoryblokRichTextNode<string>;
+    component: string;
+    main_image: MainImage;
+    _editable: string;
   };
+
+}
+export interface RecommendedTourProps {
+  story: StoryTest;
 }
 
 interface MainImage {

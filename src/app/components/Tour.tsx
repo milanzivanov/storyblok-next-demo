@@ -57,7 +57,6 @@ export function Tour(props: TourParams) {
                   const attrs = node.attrs || {};
                   return `
                         <Image
-                         className="rounded-md object-cover w-full"
                           src="${attrs.src}/m/1504x0/filters:quality(75)"
                           alt="${attrs.alt || ""}"
                           loading="lazy"

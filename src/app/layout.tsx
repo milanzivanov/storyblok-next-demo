@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import StoryblokProvider from "./components/StoryblokProvider";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,9 +34,12 @@ export default function RootLayout({
         >
           <header className="max-w-5xl mx-auto flex justify-between items-center px-5">
             <Link href={"/"}>
-              <h1 className="block text-4xl text-blue-700 font-bold py-8">
-                Travel Site
-              </h1>
+              <Image 
+                src="/globe.svg"
+                alt="TravelersHub Logo"
+                width={50}
+                height={50}
+              />
             </Link>
             <nav className="flex gap-5 px-4 py-8 ">
               <Link href={"/"}>Home</Link>
